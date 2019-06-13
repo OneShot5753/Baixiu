@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义表单控件</title>
+	<style>
+		/*方式1：*/
+		/*利用伪元素 和 后邻兄弟选择器  隐藏自带控件，显示伪元素中自定义的元素*/
+		.check {
+			display: none;
+		}
+		i{
+			font-style: normal;
+		}
+		.check + i::after {
+			
+			content: "☆"
+		}
+		.check:checked + i::after {
+			content: "★"
+		}
+
+
+		/*方式2：*/
+		/*隐藏自带控件，显示其后的<i>标签，并设置点击后的样式*/
+		.second {
+			display: none;
+		}
+		.second + i {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #ccc;
+		}
+		.second:checked + i {
+			background: deeppink;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 必须将input标签与面具标签放在一个label中才会生效 -->
+	<label>
+		<input type="checkbox" class="check">
+		<i></i>
+	</label>
+
+	<label>
+		<input type="checkbox" class="second">
+		<i></i>
+	</label>
+</body>
+</html>
