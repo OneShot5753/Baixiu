@@ -39,8 +39,8 @@ $count_comments_held = query_database_one("SELECT COUNT(*) AS NUM FROM comments 
 
     <div class="container-fluid">
       <div class="jumbotron text-center">
-        <h1>往之不谏，来者可追</h1>
-        <p>万事无他，唯手熟尔。</p>
+        <h1>Feel the Fear , Do it Anyway</h1>
+        <p>Thoughts, stories and ideas.</p>
         <p><a class="btn btn-primary btn-lg" href="post-add.php" role="button">写文章</a></p>
       </div>
       <div class="row">
@@ -56,9 +56,7 @@ $count_comments_held = query_database_one("SELECT COUNT(*) AS NUM FROM comments 
             </ul>
           </div>
         </div>
-        <div class="col-md-4" style="position: relative; height:30vh; width:30vw">
-            <canvas id="myChart"></canvas>
-        </div>
+        <div class="col-md-4"></div>
         <div class="col-md-4"></div>
       </div>
     </div>
@@ -72,38 +70,6 @@ $count_comments_held = query_database_one("SELECT COUNT(*) AS NUM FROM comments 
 
   <script src="/static/assets/vendors/jquery/jquery.js"></script>
   <script src="/static/assets/vendors/bootstrap/js/bootstrap.js"></script>
-  <script src="/static/assets/vendors/chart/Chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>NProgress.done()</script>
-  <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        datasets: [{
-          data: [456, 345, 234, 343],
-          backgroundColor : [
-            'rgba(102, 204, 204, 1)',
-            'rgba(255, 153, 204, 1)',
-            'rgba(204, 204, 255, 1)',
-            'rgba(255, 102, 102, 1)'
-          ]
-        }],
-        
-
-        // These labels appear in the legend and in the tooltips when hovering different arcs
-        labels: [
-          '草稿',
-          '分类',
-          '评论',
-          '待审核评论'
-        ]
-          
-      },
-      options: {
-      }
-
-    })
-  </script>
 </body>
 </html>
