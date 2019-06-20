@@ -10,6 +10,8 @@ verify_session_user();
 // 调用查询数据库函数，拿到相应条件下所对应的行数
 $count_posts = query_database_one("SELECT count(*) AS NUM FROM `posts`;")['NUM'];
 $count_posts_drafted = query_database_one("SELECT COUNT(*) AS NUM FROM `posts` WHERE `status` = 'drafted';")['NUM'];
+$count_posts_published = query_database_one("SELECT COUNT(*) AS NUM FROM `posts` WHERE `status` = 'published';")['NUM'];
+$count_posts_trashed = query_database_one("SELECT COUNT(*) AS NUM FROM `posts` WHERE `status` = 'trashed';")['NUM'];
 $count_categories = query_database_one("SELECT COUNT(*) AS NUM FROM categories ;")['NUM'];
 $count_comments = query_database_one("SELECT COUNT(*) AS NUM FROM comments ;")['NUM'];
 $count_comments_held = query_database_one("SELECT COUNT(*) AS NUM FROM comments WHERE `status` = 'held' ;")['NUM'];
@@ -50,13 +52,13 @@ $count_comments_held = query_database_one("SELECT COUNT(*) AS NUM FROM comments 
               <h3 class="panel-title">站点内容统计：</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item"><strong><?php echo $count_posts; ?></strong>篇文章（<strong><?php echo $count_posts_drafted; ?></strong>篇草稿）</li>
+              <li class="list-group-item"><strong><?php echo $count_posts; ?></strong>篇文章（<strong><?php echo $count_posts_drafted; ?></strong>篇草稿、<strong><?php echo $count_posts_published ?></strong>篇已发布、<strong><?php echo $count_posts_trashed ?></strong>篇回收站）</li>
               <li class="list-group-item"><strong><?php echo $count_categories; ?></strong>个分类</li>
               <li class="list-group-item"><strong><?php echo $count_comments ;?></strong>条评论（<strong><?php echo $count_comments_held ;?></strong>条待审核）</li>
             </ul>
           </div>
         </div>
-        <div class="col-md-4" style="position: relative; height:30vh; width:30vw">
+        <div class="col-md-4" style="position: relative; height:40vh; width:40vw">
             <canvas id="myChart"></canvas>
         </div>
         <div class="col-md-4"></div>
@@ -76,31 +78,45 @@ $count_comments_held = query_database_one("SELECT COUNT(*) AS NUM FROM comments 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>NProgress.done()</script>
   <script>
+    var postsNum = $('.list-group-item:first-child strong')
+    var chartNum = [];
+    for(var i=0;i<postsNum.length;i++){
+      chartNum.push(postsNum[i].innerText);
+    }
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'pie',
       data: {
         datasets: [{
-          data: [456, 345, 234, 343],
+          data: [chartNum[1], chartNum[2], chartNum[3]],
           backgroundColor : [
             'rgba(102, 204, 204, 1)',
             'rgba(255, 153, 204, 1)',
-            'rgba(204, 204, 255, 1)',
-            'rgba(255, 102, 102, 1)'
+            'rgba(204, 204, 255, 1)'
           ]
         }],
         
-
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
           '草稿',
-          '分类',
-          '评论',
-          '待审核评论'
+          '已发布',
+          '回收站',
         ]
           
       },
       options: {
+          title: {
+            display: true,
+            text: '所有文章数据一览',
+            position: 'bottom',
+            fontSize: 14,
+            lineHeight: 2
+          },
+          legend: {
+            // display: false,
+            position: 'bottom'
+          }
       }
 
     })

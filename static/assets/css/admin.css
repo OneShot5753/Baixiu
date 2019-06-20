@@ -165,6 +165,12 @@ body {
   font-size: .8em;
 }
 
+.main .container-fluid .jumbotron {
+  background: url('../img/banner.jpg') no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+}
+
 .main .container-fluid .page-title {
   overflow: hidden;
 

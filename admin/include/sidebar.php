@@ -29,8 +29,10 @@ $current_logined_user = $_SESSION['logined_user'];
 
   <div class="aside">
     <div class="profile">
+      <a href="/admin/profile.php">
       <img class="avatar" src="<?php echo $current_logined_user['avatar'] ?>">
       <h3 class="name"><?php echo $current_logined_user['nickname'] ?></h3>
+      </a>
     </div>
     <ul class="nav">
 
