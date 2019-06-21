@@ -20,6 +20,12 @@
 
 $current_logined_user = $_SESSION['logined_user'];
 
+// 使用户头像与昵称跟随数据库更新而更新，本地存储的Session是不会实时改变的
+$id = $current_logined_user['id'];
+require_once '../functions.php';
+$user = query_database_one("select * from users where id = $id;")
+
+
 
 
 
@@ -30,8 +36,8 @@ $current_logined_user = $_SESSION['logined_user'];
   <div class="aside">
     <div class="profile">
       <a href="/admin/profile.php">
-      <img class="avatar" src="<?php echo $current_logined_user['avatar'] ?>">
-      <h3 class="name"><?php echo $current_logined_user['nickname'] ?></h3>
+      <img class="avatar" src="<?php echo $user['avatar'] ?>">
+      <h3 class="name"><?php echo $user['nickname'] ?></h3>
       </a>
     </div>
     <ul class="nav">

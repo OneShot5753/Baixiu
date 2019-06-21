@@ -4,7 +4,11 @@
 
 // 引入封装文件，调用session校验函数
 require_once '../functions.php';
-$user = verify_session_user();
+$session_user = verify_session_user();
+
+// 使用户头像与昵称跟随数据库更新而更新
+$session_id = $session_user['id'];
+$user = query_database_one("select * from users where id = $session_id;");
 
 function update_user() {
   global $user;
@@ -16,18 +20,32 @@ function update_user() {
       $GLOBALS['fault'] = '请输入完整的表单';
       return;
   }
+
+  $avatar = $_FILES['avatar'];
+  if ($avatar['error'] === UPLOAD_ERR_OK) {
+    $temp = $avatar['tmp_name'];
+    $target = '../static/uploads/' . $avatar['name'];
+    $move = move_uploaded_file($temp , $target);
+    if (!$move) {
+      $GLOBALS['fault'] = '图片上传失败';
+      return;
+    }
+  }
+  $path = isset($target)? substr($target , 2):$user['avatar'];
   
-  $email = $_POST['email'] ||  $user['email'];
-  $slug = $_POST['slug'] ||  $user['slug'];
-  $nickname = $_POST['nickname'] ||  $user['nickname'];
-  $bio = $_POST['bio'] ||  $user['bio'];
+  $email = isset($_POST['email'])? $_POST['email'] : $user['email'];
+  $slug = isset($_POST['slug'])? $_POST['slug'] : $user['slug'];
+  $nickname = isset($_POST['nickname'])? $_POST['nickname'] : $user['nickname'];
+  $bio = isset($_POST['bio'])? $_POST['bio'] : $user['bio'];
   $id = $user['id'];
 
-  $affect = affectd_database("update users set email='{$email}',slug='{$slug}',nickname='{$nickname}',bio='{$bio}' where id = '{$id}' ");
+  $affect = affectd_database("update users set avatar='{$path}', email='{$email}',slug='{$slug}',nickname='{$nickname}',bio='{$bio}' where id = '{$id}' ");
   if ($affect <= 0) {
     $GLOBALS['fault'] = '数据更新失败';
     return;
   }
+
+  header('Location: /admin/users.php');
 
 }
 
