@@ -235,7 +235,29 @@ if (isset($_GET['id'])) {
        ]
         editor.create()
         $text1.val(editor.txt.html())
+  </script>
+  <script>
+    window.onload = function (){
 
+
+      $('#feature').on('change' , function() {
+        // 创建FileReader对象
+        var reader = new FileReader()
+        // 将选择的文件读取为DataURL并存在reader对象中
+        reader.readAsDataURL(this.files[0])
+        // 读取完成后，将其放到img的url中去
+        reader.onload = function(){
+          var preview = document.querySelector('.thumbnail')
+          preview.style.display = 'block';
+          preview.src = this.result
+        }
+      })
+
+
+
+
+
+    }
   </script>
   <script>NProgress.done()</script>
 
