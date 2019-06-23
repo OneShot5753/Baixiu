@@ -37,7 +37,7 @@ $user = query_database_one("select * from users where id = $id;")
     <div class="profile">
       <a href="/admin/profile.php">
       <img class="avatar" src="<?php echo $user['avatar'] ?>">
-      <h3 class="name"><?php echo $user['nickname'] ?></h3>
+      <h3 class="name" style="margin: 20px 0 10px 0;"><?php echo $user['nickname'] ?></h3>
       </a>
     </div>
     <ul class="nav">
