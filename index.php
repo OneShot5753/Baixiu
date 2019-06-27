@@ -1,6 +1,12 @@
 <?php
 
-require_once 'config.php';
+require_once 'functions.php';
+$categories = query_database_all("select * from categories");
+
+
+
+// Demand：
+// 1. 数据动态展示
 
 ?>
 
@@ -17,7 +23,7 @@ require_once 'config.php';
   <div class="wrapper">
     <div class="topnav">
       <ul>
-        <li><a href="/list.php" target="_blank"><i class="fa fa-glass"></i>奇趣事</a></li>
+        <li><a  href="/list.php" target="_blank"><i class="fa fa-glass"></i>奇趣事</a></li>
         <li><a href="javascript:;"><i class="fa fa-phone"></i>潮科技</a></li>
         <li><a href="javascript:;"><i class="fa fa-fire"></i>会生活</a></li>
         <li><a href="javascript:;"><i class="fa fa-gift"></i>美奇迹</a></li>
@@ -26,10 +32,9 @@ require_once 'config.php';
     <div class="header">
       <h1 class="logo"><a href="index.html"><img src="/static/assets/img/logo.png" alt=""></a></h1>
       <ul class="nav">
-        <li><a  href="/list.php" target="_blank"><i class="fa fa-glass"></i>奇趣事</a></li>
-        <li><a href="javascript:;"><i class="fa fa-phone"></i>潮科技</a></li>
-        <li><a href="javascript:;"><i class="fa fa-fire"></i>会生活</a></li>
-        <li><a href="javascript:;"><i class="fa fa-gift"></i>美奇迹</a></li>
+        <?php foreach ($categories as $row ): ?>
+          <li><a href="javascript:;"><i class="fa fa-fire"></i><?php echo $row['name']; ?></a></li>
+        <?php endforeach ?>
       </ul>
       <div class="search">
         <form>
