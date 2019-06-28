@@ -10,15 +10,17 @@
 
 
 
-![图片](https://uploader.shimo.im/f/ly4Jm1lDML4b0xxm.png!thumbnail)
+![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image.png)
 
-![图片](https://uploader.shimo.im/f/Gp6seQRYE2I6jcbJ.png!thumbnail)
+![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(1).png)
 
-![图片](https://uploader.shimo.im/f/B80cONxHFI4QJVn1.png!thumbnail)
+![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(2).png)
 
-![图片](https://uploader.shimo.im/f/PEF9lslKjZgO8BFY.png!thumbnail)
+![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(3).png)
 
-![图片](https://uploader.shimo.im/f/GkFMLatlY0EtaB8x.png!thumbnail)
+![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(4).png)
+
+![picture](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/ima2ge.png)
 
 
 [TOC]
