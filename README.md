@@ -4,12 +4,32 @@ A self-media writing platform.
 
 
 
+**界面预览**
+
+
+
+![图片](https://uploader.shimo.im/f/ly4Jm1lDML4b0xxm.png!thumbnail)
+
+![图片](https://uploader.shimo.im/f/Gp6seQRYE2I6jcbJ.png!thumbnail)
+
+![图片](https://uploader.shimo.im/f/B80cONxHFI4QJVn1.png!thumbnail)
+
+![图片](https://uploader.shimo.im/f/PEF9lslKjZgO8BFY.png!thumbnail)
+
+![图片](https://uploader.shimo.im/f/GkFMLatlY0EtaB8x.png!thumbnail)
+
+
+
+<a name='#1.产品开发流程'> 1. 产品开发流程</a>
+
+<a name='#2.技术选型'>2.技术选型</a>
 
 
 
 
 
-## 1. 学习产品开发完整流程
+
+## 1. 产品开发完整流程
 
 ![图片](https://uploader.shimo.im/f/gBTsAvdbl7MbnIcV.png!thumbnail)
 

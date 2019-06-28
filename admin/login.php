@@ -85,7 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
   <link rel="stylesheet" href="/static/assets/vendors/animate/animate.css">
 </head>
 <body>
+
   <div class="login">
+    <header class="head">百秀后台管理系统</header>
     <!-- 确保form的action属性、method属性。为其加上有错误就shake的css特效 -->
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='post' class="login-wrap <?php echo isset($fault)? 'shake animated':''?> " autocomplete="off">
       <img class="avatar" src="/static/assets/img/default.png">

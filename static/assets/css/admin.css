@@ -18,6 +18,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 .aside {
   position: fixed;
   top: 0;
@@ -334,13 +336,22 @@ body {
   background-color: #2f4050;
 }
 
+header.head {
+  position: absolute;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .login .login-wrap {
   position: relative;
-
   max-width: 380px;
-  margin: 180px auto;
+  margin: 250px auto;
   padding: 100px 40px 40px;
-
   border-radius: 4px;
   background-color: #fff;
 }
