@@ -1,4 +1,4 @@
-# 百秀自媒体写作后台
+#  百秀自媒体写作后台
 A self-media writing platform.
 > Just Say What U Think
 
@@ -8,7 +8,8 @@ A self-media writing platform.
 
 
 
-# 学习产品开发完整流程
+
+## 1. 学习产品开发完整流程
 
 ![图片](https://uploader.shimo.im/f/gBTsAvdbl7MbnIcV.png!thumbnail)
 
@@ -21,26 +22,26 @@ A self-media writing platform.
 
 **省略 需求和设计 ，我们从技术选型开始*
 
-# 技术选型
+## 2. 技术选型
 
 没什么好选的，只有目前掌握的技术栈：
 
 - 服务端： PHP + MySQL
 - 客户端：JQuery  + Bootstrap + plugins ... 
 
-# 数据库结构
+## 3. 数据库结构
 
 ![图片](https://uploader.shimo.im/f/bG5w5GxDGpcHHPNX.png!thumbnail)
 
 > 数据库结构是由专门的数据库工程师或者后端开发人员所负责的。
 
-# 项目架构
+## 4. 项目架构
 
-## 基本的目录结构
+### 4.1. 基本的目录结构
 
 ![图片](https://uploader.shimo.im/f/A0UTXTqE0SAhzTCf.png!thumbnail)
 
-## 整合静态资源文件
+### 4.2. 整合静态资源文件
 
 **静态文件：**服务端不经过任何处理就返回客户端的文件，或者说，单纯由客户端处理的文件。例如：图片、字体、css样式... （静态文件在开发流程的UI设计阶段就应该准备好）
 **动态文件：**服务端对请求的文件进行处理，并将处理后的结果返回给客户端的文件，例如：PHP文件、ASP文件、JSP文件...
@@ -50,7 +51,7 @@ A self-media writing platform.
 
 ![图片](https://uploader.shimo.im/f/OHHXF7X08sQjgY2U.png!thumbnail)
 
-## 建立项目配置文件
+### 4.3. 建立项目配置文件
 
 项目配置文件是一个纯PHP文件(config.php)
 目的：将项目中公共的多个不同地方都会调用的东西存放在一个文件之中，以便后续修改。
@@ -63,7 +64,7 @@ A self-media writing platform.
 > 有关 php.ini配置中的 display_errors 是打开还是关闭的问题
 > [https://www.jianshu.com/p/5af8c0ba13e5](https://www.jianshu.com/p/5af8c0ba13e5)
 
-## 批量整合后台页面
+### 4.4. 批量整合后台页面
 
 - 将静态网页文件复制到admin（后台）网站目录下
 - 将静态网页转换为动态网页  .html格式  -->  .php格式  （用CMD批量修改）
@@ -75,9 +76,9 @@ A self-media writing platform.
 ![图片](https://uploader.shimo.im/f/pge0R0GzLVkpOjY0.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/R0lYDiwPtDUNYlke.png!thumbnail)
 
-##  
 
-## 抽离公共部分
+
+### 4.5. 抽离公共部分
 
 ![图片](https://uploader.shimo.im/f/oMHgIoN2skE4UdfO.png!thumbnail)![图片](https://uploader.shimo.im/f/Hh2MOYY3ZAs0YfSg.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/j1GYPIkvY9QgX5B8.png!thumbnail)
@@ -97,9 +98,9 @@ A self-media writing platform.
 ![图片](https://uploader.shimo.im/f/47wn36HNly8MLTlV.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/HiEDIRUq998tcp3a.png!thumbnail)
 
-# 业务迭代开发
+## 5. 业务迭代开发
 
-## 解决公共部分问题
+### 5.1. 解决公共部分问题
 
 - **解决公共部分侧边栏一级目录的点击高亮显示问题**
 
@@ -130,7 +131,7 @@ Error：由于公共部分的侧边栏默认选中了“仪表盘”的目录，
 
 
 
-## 用户登录界面功能
+### 5.2. 用户登录界面功能
 
 核心功能：
 
@@ -177,7 +178,7 @@ Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头�
 尽管登录界面也是php文件，但是为了将功能分区，最好将服务端做的事与客户端分开。单独放在一个文件下。
 ![图片](https://uploader.shimo.im/f/MhiNaD9EysIOSdpg.png!thumbnail)
 
-## 更新登录用户信息首页
+### 5.3. 更新登录用户信息首页
 
 - **基本信息**
 
@@ -211,7 +212,7 @@ Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头�
 
 接入  chart.js  或者  Echart.js 库
 
-## 分类目录页功能
+### 5.4. 分类目录页功能
 
 - **动态呈现分类列表**
 
@@ -315,7 +316,7 @@ Demand：当列表中任意一个或多个复选框被选中时，显示批量�
 
 
 
-## 所有文章页功能
+### 5.5. 所有文章页功能
 
 - **数据动态呈现**
 
@@ -436,7 +437,7 @@ Demand:
 
 ***>>>所有文章页面完整代码  posts.php***
 
-## 写文章页功能
+### 5.6. 写文章页功能
 
 - **富文本编辑器的接入**
 
@@ -466,7 +467,7 @@ Demand:
 
 搞了半天卡着了，好好理理get 与post 请求的顺序流程吧。
 
-## 评论页功能（Ajax 异步）
+### 5.7. 评论页功能（Ajax 异步）
 
 - **数据动态呈现与分页**
 
@@ -503,7 +504,7 @@ Demand:
 1. 服务端接收 id ， 在数据库中进行删除
 2. Debug：点击删除按钮执行删除数据，页面应该及时得到刷新，有分页的情况下应该使界面保持在原来页码界面。
 
-## 网站设置页功能
+### 5.8. 网站设置页功能
 
 - **异步文件即传即用**
 
@@ -534,7 +535,7 @@ Demand:
 ![图片](https://uploader.shimo.im/f/hGcVq64OCxkNHyTf.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/EIEtIcjyklQ0ebYa.png!thumbnail)
 
-# 自主完成剩余
+## 6. 完成剩余
 
 - [x] 用户管理页功能
 - [x] 个人中心页修改个人信息
