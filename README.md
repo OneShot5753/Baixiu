@@ -29,7 +29,7 @@
 
 ## 1. 产品开发完整流程
 
-![图片](https://uploader.shimo.im/f/gBTsAvdbl7MbnIcV.png!thumbnail)
+![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/procedure%20.png)
 
 > 完整的软件开发流程究竟是什么样的？
 > [http://www.chanpin100.com/article/105638](http://www.chanpin100.com/article/105638)
