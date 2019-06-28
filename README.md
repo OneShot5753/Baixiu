@@ -1,6 +1,8 @@
 #  百秀自媒体写作后台
-A self-media writing platform.
-> Just Say What U Think
+
+> A self-media writing platform.
+
+
 
 
 
@@ -19,10 +21,7 @@ A self-media writing platform.
 ![图片](https://uploader.shimo.im/f/GkFMLatlY0EtaB8x.png!thumbnail)
 
 
-
-<a name='#1.产品开发流程'> 1. 产品开发流程</a>
-
-<a name='#2.技术选型'>2.技术选型</a>
+[toc]
 
 
 
