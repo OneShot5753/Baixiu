@@ -1,31 +1,31 @@
-#  百秀自媒体写作后台
+# 百秀自媒体写作后台
 
 > A self-media writing platform.
 
+## 启动项目
 
+1. 开启 Apache 和 MySQL
+2. 浏览器访问本地主机 localhost
+3. 尾部加入子目录 admin 访问后台系统
+4. 所有用户在数据库中可查 navicat
 
-
+---
 
 **界面预览**
 
-
-
 ![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image.png)
 
-![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(1).png)
+![图片](<https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(1).png>)
 
-![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(2).png)
+![图片](<https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(2).png>)
 
-![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(3).png)
+![图片](<https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(3).png>)
 
-![图片](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(4).png)
+![图片](<https://github.com/doubleyao5753/baixiu/blob/master/preview/images/image%20(4).png>)
 
 ![picture](https://github.com/doubleyao5753/baixiu/blob/master/preview/images/ima2ge.png)
 
-
 [TOC]
-
-
 
 ## 1. 产品开发完整流程
 
@@ -38,14 +38,14 @@
 
 ![图片](https://uploader.shimo.im/f/qyNmdnikF74it7zg.png!thumbnail)
 
-**省略 需求和设计 ，我们从技术选型开始*
+\*_省略 需求和设计 ，我们从技术选型开始_
 
 ## 2. 技术选型
 
 没什么好选的，只有目前掌握的技术栈：
 
 - 服务端： PHP + MySQL
-- 客户端：JQuery  + Bootstrap + plugins ... 
+- 客户端：JQuery + Bootstrap + plugins ...
 
 ## 3. 数据库结构
 
@@ -61,40 +61,38 @@
 
 ### 4.2. 整合静态资源文件
 
-**静态文件：**服务端不经过任何处理就返回客户端的文件，或者说，单纯由客户端处理的文件。例如：图片、字体、css样式... （静态文件在开发流程的UI设计阶段就应该准备好）
-**动态文件：**服务端对请求的文件进行处理，并将处理后的结果返回给客户端的文件，例如：PHP文件、ASP文件、JSP文件...
+**静态文件：**服务端不经过任何处理就返回客户端的文件，或者说，单纯由客户端处理的文件。例如：图片、字体、css 样式... （静态文件在开发流程的 UI 设计阶段就应该准备好）
+**动态文件：**服务端对请求的文件进行处理，并将处理后的结果返回给客户端的文件，例如：PHP 文件、ASP 文件、JSP 文件...
 
-- 将css、img、js、第三方资源venders等文件夹复制到静态文件夹static下的资产文件夹assets之中。
-- 如果用户量大，可以在用户上传资源文件夹uploads文件夹中建立分类子文件夹方便管理。
+- 将 css、img、js、第三方资源 venders 等文件夹复制到静态文件夹 static 下的资产文件夹 assets 之中。
+- 如果用户量大，可以在用户上传资源文件夹 uploads 文件夹中建立分类子文件夹方便管理。
 
 ![图片](https://uploader.shimo.im/f/OHHXF7X08sQjgY2U.png!thumbnail)
 
 ### 4.3. 建立项目配置文件
 
-项目配置文件是一个纯PHP文件(config.php)
+项目配置文件是一个纯 PHP 文件(config.php)
 目的：将项目中公共的多个不同地方都会调用的东西存放在一个文件之中，以便后续修改。
 例如：数据库的相关配置
 
 ![图片](https://uploader.shimo.im/f/xBuTDkBcM9YDf4Ex.png!thumbnail)
-在配置文件中将数据库配置信息定义为常量，再其他php文件中用 
- **require_once ' config.php' ;   **将其引用
+在配置文件中将数据库配置信息定义为常量，再其他 php 文件中用
+**require_once ' config.php' ; **将其引用
 
-> 有关 php.ini配置中的 display_errors 是打开还是关闭的问题
+> 有关 php.ini 配置中的 display_errors 是打开还是关闭的问题
 > [https://www.jianshu.com/p/5af8c0ba13e5](https://www.jianshu.com/p/5af8c0ba13e5)
 
 ### 4.4. 批量整合后台页面
 
-- 将静态网页文件复制到admin（后台）网站目录下
-- 将静态网页转换为动态网页  .html格式  -->  .php格式  （用CMD批量修改）
-- 将HTML代码中引入其他文件的相对路径，批量修改为绝对路径
-- 将所有代码中url地址中的  .html  替换为 .php
+- 将静态网页文件复制到 admin（后台）网站目录下
+- 将静态网页转换为动态网页 .html 格式 --> .php 格式 （用 CMD 批量修改）
+- 将 HTML 代码中引入其他文件的相对路径，批量修改为绝对路径
+- 将所有代码中 url 地址中的 .html 替换为 .php
 
 ![图片](https://uploader.shimo.im/f/lCz3Hc1iaL8gG0wZ.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/c4yOdPeCuN4os7I9.png!thumbnail)![图片](https://uploader.shimo.im/f/klUlD4TJprc39jmL.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/pge0R0GzLVkpOjY0.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/R0lYDiwPtDUNYlke.png!thumbnail)
-
-
 
 ### 4.5. 抽离公共部分
 
@@ -103,15 +101,15 @@
 ... ...
 由于后台页面中，侧边栏和顶部导航栏都是一样的，为了缩减代码，提高效率，我们有必要将公用的部分抽离出来单独放到一个文件中，大家共同调用。
 
-- 在动态网页文件当前文件夹新建一个公共部分文件夹 include  ，在里面建立单独的公共部分文件。
+- 在动态网页文件当前文件夹新建一个公共部分文件夹 include ，在里面建立单独的公共部分文件。
 
 ![图片](https://uploader.shimo.im/f/NFEuV31gOCwuE49j.png!thumbnail)
 
-- 将公共部分的HTML结构代码存放在各自的PHP文件中
+- 将公共部分的 HTML 结构代码存放在各自的 PHP 文件中
 
 ![图片](https://uploader.shimo.im/f/Rpa3pRKebHAdhXU8.png!thumbnail)
 
-- 在所有需要用到公共部分的文件中，将包含这部分的HTML代码替换为php引用代码
+- 在所有需要用到公共部分的文件中，将包含这部分的 HTML 代码替换为 php 引用代码
 
 ![图片](https://uploader.shimo.im/f/47wn36HNly8MLTlV.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/HiEDIRUq998tcp3a.png!thumbnail)
@@ -126,16 +124,15 @@ Error：由于公共部分的侧边栏默认选中了“仪表盘”的目录，
 
 > include 一个文件，就可以看做那个文件的代码被插入到了这里。
 
-1. 在各个调用公共部分的文件的include语句之前，设置一个 $current 变量，每一个文件的这个变量值可以指定自己是谁。
+1. 在各个调用公共部分的文件的 include 语句之前，设置一个 \$current 变量，每一个文件的这个变量值可以指定自己是谁。
 
 ![图片](https://uploader.shimo.im/f/nvVzkdeFcqkMFFKK.png!thumbnail)
 
-2. 在公共sidebar的HTML代码结构中，通过判断这个变量是不是等于目录所对应的那个文件所指定的变量值，来决定要不要加active的样式属性。
+2. 在公共 sidebar 的 HTML 代码结构中，通过判断这个变量是不是等于目录所对应的那个文件所指定的变量值，来决定要不要加 active 的样式属性。
 
 ![图片](https://uploader.shimo.im/f/3FZ09bP09fMcQEsZ.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/nFKIXd2KALQismV1.png!thumbnail)
-![图片](https://uploader.shimo.im/f/mUi5FYMypms69POt.png!thumbnail)        ... ...
-**当然，为了防止找不到$current这变量，在sidebar所有代码开头设置判断isset*
+![图片](https://uploader.shimo.im/f/mUi5FYMypms69POt.png!thumbnail) ... ... \*_当然，为了防止找不到\$current 这变量，在 sidebar 所有代码开头设置判断 isset_
 
 - **解决公共部分侧边栏二级目录的点击高亮显示问题**
 
@@ -147,28 +144,26 @@ Error：由于公共部分的侧边栏默认选中了“仪表盘”的目录，
 
 ![图片](https://uploader.shimo.im/f/2IdRdFtoD5ABJNZz.gif)
 
-
-
 ### 5.2. 用户登录界面功能
 
 核心功能：
 
-1. 完善form标签的action、method等各种属性，表单标签的name属性，确保有提交按钮submit
+1. 完善 form 标签的 action、method 等各种属性，表单标签的 name 属性，确保有提交按钮 submit
 2. 表单验证：验证完整性 + 验证正确性
 3. 通过调用配置文件，接入数据库，用来验证用户填写数据的正确性
-4. 页面访问权限控制，在登录页面使用Session记录登录状态，在首页页面验证Session，没有则无权访问，跳转登录页面
-5. 除了首页，几乎其他所有后台页面都需要页面访问权限控制，都需要判断有无session，为了优化代码，将检验Session的代码块封装起来
+4. 页面访问权限控制，在登录页面使用 Session 记录登录状态，在首页页面验证 Session，没有则无权访问，跳转登录页面
+5. 除了首页，几乎其他所有后台页面都需要页面访问权限控制，都需要判断有无 session，为了优化代码，将检验 Session 的代码块封装起来
 
 ![图片](https://uploader.shimo.im/f/VULzSWO12ZgckXi1.gif)
 ![图片](https://uploader.shimo.im/f/Wlv7eL72JfgL3N4Y.png!thumbnail)
-***>>>>>>>  login.php***
+**_>>>>>>> login.php_**
 ![图片](https://uploader.shimo.im/f/ruX2CbD1lfAjXxfb.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/IWRiBphTUts66CIy.png!thumbnail)
 
-***>>>>>>>  index.php***
+**_>>>>>>> index.php_**
 ![图片](https://uploader.shimo.im/f/5oprLXvutC4Njntk.png!thumbnail)
 
-***>>>>>>>  封装session校验：functions.php***
+**_>>>>>>> 封装 session 校验：functions.php_**
 ![图片](https://uploader.shimo.im/f/bWhFXNYvazYRb6jg.png!thumbnail)
 专门建立一个文件储存封装代码。封装之后，所有需要登录权限控制的文件，即可引入文件，调用函数即可。
 
@@ -184,16 +179,14 @@ verify_session_user();
 
 ![图片](https://uploader.shimo.im/f/YNW72pVj9l0Bwxtu.png!thumbnail)
 Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头像。
-当邮箱表单元素失去焦点时，利用ajax向服务端中的数据库请求头像图片路径并展示在HTML中。
+当邮箱表单元素失去焦点时，利用 ajax 向服务端中的数据库请求头像图片路径并展示在 HTML 中。
 
-***>>>>>>>  login.php （客户端）***
-引入JQuery，在js中注册事件和ajax。
+**_>>>>>>> login.php （客户端）_**
+引入 JQuery，在 js 中注册事件和 ajax。
 ![图片](https://uploader.shimo.im/f/BEb3PzwbYB0GY4SH.png!thumbnail)
 
-
-
-***>>>>>>>  avata.php （服务端）***
-尽管登录界面也是php文件，但是为了将功能分区，最好将服务端做的事与客户端分开。单独放在一个文件下。
+**_>>>>>>> avata.php （服务端）_**
+尽管登录界面也是 php 文件，但是为了将功能分区，最好将服务端做的事与客户端分开。单独放在一个文件下。
 ![图片](https://uploader.shimo.im/f/MhiNaD9EysIOSdpg.png!thumbnail)
 
 ### 5.3. 更新登录用户信息首页
@@ -202,8 +195,8 @@ Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头�
 
 用户登录后，跳转到后台页面，此时应该更新用户的头像、昵称等基本信息。
 ![图片](https://uploader.shimo.im/f/GO2pfWCuzI8pNQQW.png!thumbnail)
-由于这一部分的信息在公共部分的侧边栏中，所以在sidebar.php文件中修改
-因为session中存的是user的数据，所以直接从session中拿到即可
+由于这一部分的信息在公共部分的侧边栏中，所以在 sidebar.php 文件中修改
+因为 session 中存的是 user 的数据，所以直接从 session 中拿到即可
 ![图片](https://uploader.shimo.im/f/uCqaWoS6LIYuDN5l.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/hwzLIn6Jz5wFI8Kx.png!thumbnail)
 
@@ -216,19 +209,19 @@ Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头�
 ![图片](https://uploader.shimo.im/f/3uDcGfdxMXYbHQ7M.png!thumbnail)
 数据库查询语句（最好先在数据库环境下查询测试一下）
 ![图片](https://uploader.shimo.im/f/Wlj4gEi8N0UkNSBi.png!thumbnail)
-***>>> 数据库查询功能的封装***
+**_>>> 数据库查询功能的封装_**
 封装一个功能，首先写出一个实例，再将其参数抽象出来。
 封装函数思维不能太死板，如果有需要，要适当的将这个函数的能力进行扩展，多构想使用场景。例如封装这个数据库查询功能：
 由于有许多查询语句需要提取数据，这是封装最常见的情况 ，也是必须的情况。
-有时候我们要提取到所有数据，但有时我们又只需要一行数据（例如count），因此封装的时候要尽量将两个不同的能力都封装起来。
+有时候我们要提取到所有数据，但有时我们又只需要一行数据（例如 count），因此封装的时候要尽量将两个不同的能力都封装起来。
 ![图片](https://uploader.shimo.im/f/XP5wvVqFO9IVITGv.png!thumbnail)
-在index.php 以及其他需要查询数据库的文件调用这个函数！！！
+在 index.php 以及其他需要查询数据库的文件调用这个函数！！！
 ![图片](https://uploader.shimo.im/f/jItteb6UoUoJ3IdC.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/U3xArsd9WlM9PNXg.png!thumbnail)
 
 - **统计数据信息可视化**
 
-接入  chart.js  或者  Echart.js 库
+接入 chart.js 或者 Echart.js 库
 
 ### 5.4. 分类目录页功能
 
@@ -238,14 +231,14 @@ Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头�
 
 1. 调用前面已经封装过的查询数据库函数，拿到所有分类数据
 2. 混编，遍历数组并创建行
-3. 替换数据为php变量
+3. 替换数据为 php 变量
 
 ![图片](https://uploader.shimo.im/f/JeGy2hKfV2E0c1Sg.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/9dJhhTr0XtIKaraU.png!thumbnail)
 
 - **动态添加分类功能**
 
-1. 完善form表单：包括其中的各种应有属性，例如action、method、name、button
+1. 完善 form 表单：包括其中的各种应有属性，例如 action、method、name、button
 2. 请求服务端，服务端：校验表单+持久化+响应
 
 ![图片](https://uploader.shimo.im/f/L0fUAtX5yJI51J40.gif)
@@ -256,7 +249,7 @@ Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头�
 
 - **单条数据删除功能**
 
-1. 点击删除按钮，通过url传参的方式告诉服务端当前的id
+1. 点击删除按钮，通过 url 传参的方式告诉服务端当前的 id
 2. 服务端接收响应，调用封装的函数进行数据删除，然后返回原来的界面
 
 ![图片](https://uploader.shimo.im/f/NpWx8xxu8qUA5adP.png!thumbnail)
@@ -266,23 +259,23 @@ Demand：邮箱输入完毕后，自动显示邮箱在数据库所对应的头�
 
 - **批量删除功能**
 
-Demand：当列表中任意一个或多个复选框被选中时，显示批量删除按钮，点击批量删除即可删除被选中的数据，否则，一个都不选中的时候，隐藏批量删除按钮。（主要是客户端的功能，有JS实现）
+Demand：当列表中任意一个或多个复选框被选中时，显示批量删除按钮，点击批量删除即可删除被选中的数据，否则，一个都不选中的时候，隐藏批量删除按钮。（主要是客户端的功能，有 JS 实现）
 
-1. *拿到所有复选框以及批量删除的按钮，为每一个复选框注册change事件，遍历每一个复选框用prop查看其DOM对象中的checked属性，若有一个为true则淡入按钮，否则淡出。*
+1. _拿到所有复选框以及批量删除的按钮，为每一个复选框注册 change 事件，遍历每一个复选框用 prop 查看其 DOM 对象中的 checked 属性，若有一个为 true 则淡入按钮，否则淡出。_
 
 ![图片](https://uploader.shimo.im/f/NPWQc59GvAIivCFH.png!thumbnail)
 
-1. **拿到所有复选框及批量删除按钮，为每个复选框注册change事件，在事件函数中，定义一个空数组存放被选中的复选框，为当前点击的复选框添加一个附加数据，如果当前复选框有checked则附加数据加到数组中，否则从数组中删去。最后根据数组中的数量来决定“批量删除”按钮的显示与隐藏。**
+1. **拿到所有复选框及批量删除按钮，为每个复选框注册 change 事件，在事件函数中，定义一个空数组存放被选中的复选框，为当前点击的复选框添加一个附加数据，如果当前复选框有 checked 则附加数据加到数组中，否则从数组中删去。最后根据数组中的数量来决定“批量删除”按钮的显示与隐藏。**
 
 ![图片](https://uploader.shimo.im/f/sg2ktMurvvwGNBH6.png!thumbnail)
 
-1. **在目录列表tbody中为input复选框设置H5中的data-知识，设置data-id为这条数据真正的id编号，**在Js中将那个附加数据替换为真正的id，批量删除按钮的url设置为单条删除服务端的那个文件，用prop()将数组中的id传到url中去，实现单条删除与批量删除共用一个服务端文件。
+1. **在目录列表 tbody 中为 input 复选框设置 H5 中的 data-知识，设置 data-id 为这条数据真正的 id 编号，**在 Js 中将那个附加数据替换为真正的 id，批量删除按钮的 url 设置为单条删除服务端的那个文件，用 prop()将数组中的 id 传到 url 中去，实现单条删除与批量删除共用一个服务端文件。
 
 ![图片](https://uploader.shimo.im/f/DSpd00fnSFIdzJUY.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/fu9T4VLLYwoL6WeQ.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/ZmWlC1kSnSwihxIX.png!thumbnail)
 
-1. 服务端改造成既支持删除一条也支持删除多条的功能  sql 语句中的 in
+1. 服务端改造成既支持删除一条也支持删除多条的功能 sql 语句中的 in
 
 ![图片](https://uploader.shimo.im/f/XcOgQT8H7RI4pqch.png!thumbnail)
 
@@ -292,22 +285,22 @@ Demand：当列表中任意一个或多个复选框被选中时，显示批量�
 
 **重难点：**
 
-- jQuery中 .attr() 与 .prop() 的区别和用法
+- jQuery 中 .attr() 与 .prop() 的区别和用法
 - 多个复选框同时选中的优化写法
-- H5 中的data- 以及jQuery中的.data() 的意义和用法
-- SQL语句与PHP变量的混合拼接
+- H5 中的 data- 以及 jQuery 中的.data() 的意义和用法
+- SQL 语句与 PHP 变量的混合拼接
 
-- **单条数据编辑功能    ****比较复杂，理清思路**
+- **单条数据编辑功能 \*\***比较复杂，理清思路\*\*
 
 **两个功能: 呈现编辑页面 + 提交表单更新数据**![图片](https://uploader.shimo.im/f/e9TdZK88wJoix5RS.gif)
 
-1. 在编辑按钮中指定url地址为本身绝对路径，并通过url传参将当前按钮的id传给服务端
+1. 在编辑按钮中指定 url 地址为本身绝对路径，并通过 url 传参将当前按钮的 id 传给服务端
 
 ![图片](https://uploader.shimo.im/f/hkQSBQCbAgsaR0v6.png!thumbnail)
 
-> 由于此时当前文件的PHP代码中已经有 添加分类 和 呈现数据 两个功能，要将 编辑功能 添加进去，不得不认真考虑顺序以及逻辑问题
+> 由于此时当前文件的 PHP 代码中已经有 添加分类 和 呈现数据 两个功能，要将 编辑功能 添加进去，不得不认真考虑顺序以及逻辑问题
 
-1. 首先就是要考虑 **通过编辑按钮传的id去从数据库拿到对应数据并将其呈现在页面之中 。**
+1. 首先就是要考虑 **通过编辑按钮传的 id 去从数据库拿到对应数据并将其呈现在页面之中 。**
 
 > 由于编辑功能要与前面默认打开时的添加功能共用一个页面，因此，利用从数据库拿到的数据变量来判定是呈现编辑页面还是呈现默认的添加分类页面
 
@@ -319,26 +312,24 @@ Demand：当列表中任意一个或多个复选框被选中时，显示批量�
 
 ![图片](https://uploader.shimo.im/f/0FwuUFVWxOoMDRQD.png!thumbnail)
 
-1. 确保点击编辑按钮能够呈现编辑功能页面后，再进入子功能二准备：完善编辑页面的form表单，指向自身，同时跟上id
-2. **重难点：****提交表单更新分类数据**** 与 ****提交表单添加分类数据**** 糅合在一个PHP文件之中。**
+1. 确保点击编辑按钮能够呈现编辑功能页面后，再进入子功能二准备：完善编辑页面的 form 表单，指向自身，同时跟上 id
+2. **重难点：\*\***提交表单更新分类数据\***\* 与 \*\***提交表单添加分类数据\***\* 糅合在一个 PHP 文件之中。**
 
-> 理清触发两个功能的时机和先后顺序：添加功能是POST请求但没有传参，编辑功能是POST请求但有参数传递。因此写出判断条件，执行代码的时机
+> 理清触发两个功能的时机和先后顺序：添加功能是 POST 请求但没有传参，编辑功能是 POST 请求但有参数传递。因此写出判断条件，执行代码的时机
 
 ![图片](https://uploader.shimo.im/f/e7gg2rcOH3cjSCLv.png!thumbnail)
 
-1. 在触发判断条件之前完善编辑功能函数 edit_category() 
+1. 在触发判断条件之前完善编辑功能函数 edit_category()
 
 ![图片](https://uploader.shimo.im/f/o09ty0hrdY8bfgUU.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/PgZmrTJoriAucXHc.png!thumbnail)
 分类目录页的完整代码直接去翻源文件。
 
-
-
 ### 5.5. 所有文章页功能
 
 - **数据动态呈现**
 
-1. 调用查询数据封装功能函数，查询页面中要呈现的指定数据。foreach遍历创建列表，替换变量，即可动态呈现基本数据到页面中
+1. 调用查询数据封装功能函数，查询页面中要呈现的指定数据。foreach 遍历创建列表，替换变量，即可动态呈现基本数据到页面中
 
 ```
 // Demand 1： 数据动态呈现在页面中，正确呈现作者名、分类名、发布状态，以及指定时间格式
@@ -362,17 +353,17 @@ if (!$posts_data) {
 ![图片](https://uploader.shimo.im/f/STRjNhODDAYMRVbj.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/JvMVXHRXHWQfvqBI.png!thumbnail)
 
-- **分页页码展示功能   ****比较复杂，理清思路**
+- **分页页码展示功能 \*\***比较复杂，理清思路\*\*
 
-1. 数据库有关分页的查询语句，将其添加到php代码中的获取数据中去
+1. 数据库有关分页的查询语句，将其添加到 php 代码中的获取数据中去
 
 ![图片](https://uploader.shimo.im/f/NBW6jxLexgU6q1A5.png!thumbnail)
 
-1. **数据分页展示：**点击页码按钮，通过向本页面url传递参数，用来识别第几页，从而做出相应跳转，先手动在地址栏对url传递参数测试，在php中接收这个参数
+1. **数据分页展示：**点击页码按钮，通过向本页面 url 传递参数，用来识别第几页，从而做出相应跳转，先手动在地址栏对 url 传递参数测试，在 php 中接收这个参数
 
 ![图片](https://uploader.shimo.im/f/vZhLuHQBmtA6rnhI.png!thumbnail)
 
-1. **正确显示页码****★★★**
+1. **正确显示页码\*\***★★★\*\*
 
 > [https://www.layui.com/demo/laypage.html#!fenye=5](https://www.layui.com/demo/laypage.html#!fenye=5)
 > 框架库中写好的分页
@@ -394,46 +385,44 @@ Demand:
 ```
 
 1. 计算页码：假设页码展示变量$show5个，定义左右偏移变量 $side，开始页码变量$begin，结束页码变量 $end
-2. 在页面中以 $begin 为计数器，$end 为终止器进行for循环创建页码，页码中的a标签向自身传参传当前页码数
-3. 当前页码高亮显示，在循环中的标签中设置判断，如果循环数字等于当前参数指定页码，那么这个页码就class高亮
-4. 求出最大页码：(数据总条数 /  每页展示条数) 向上取整，强制转换int() 确保，尤其注意查询语句，数据总条数应该等于所有数据都存在时的总条数，所以应该关联查询
-5. 处理 $begin必须从 1 开始，并调整由此对$end带来的副作用
+2. 在页面中以 $begin 为计数器，$end 为终止器进行 for 循环创建页码，页码中的 a 标签向自身传参传当前页码数
+3. 当前页码高亮显示，在循环中的标签中设置判断，如果循环数字等于当前参数指定页码，那么这个页码就 class 高亮
+4. 求出最大页码：(数据总条数 / 每页展示条数) 向上取整，强制转换 int() 确保，尤其注意查询语句，数据总条数应该等于所有数据都存在时的总条数，所以应该关联查询
+5. 处理 $begin必须从 1 开始，并调整由此对$end 带来的副作用
 6. 处理$end必须以 最大页码 结束，并调整由此对$begin 带来的副作用
 7. 防止用户在地址栏输入比最小值小比最大值大的参数，设置两个判断跳转网页
 8. 页码为 1 时 禁用上一页按钮；页码为 最大页码 时 禁用下一页按钮
-9. 开始页码等于1时，隐藏前省略号和首页按钮；结束页码等于最大页码时，隐藏后省略号和尾页按钮
-10. 上一页与下一页的变量设置以及写进html结构
-11. debug 考虑到$max_page=1也就是总共就一页的情况，应该对$begin再进行一次判断
+9. 开始页码等于 1 时，隐藏前省略号和首页按钮；结束页码等于最大页码时，隐藏后省略号和尾页按钮
+10. 上一页与下一页的变量设置以及写进 html 结构
+11. debug 考虑到$max_page=1也就是总共就一页的情况，应该对$begin 再进行一次判断
 
-***>>>成品：***
+**_>>>成品：_**
 ![图片](https://uploader.shimo.im/f/97YiP266YkUSzyze.gif)
-***>>>php代码中的页码计算：***
+**_>>>php 代码中的页码计算：_**
 ![图片](https://uploader.shimo.im/f/bjBqyEy0tKEDBOtc.png!thumbnail)
-***>>>html混编：***
+**_>>>html 混编：_**
 ![图片](https://uploader.shimo.im/f/u7lFWNXpMgccpJ9w.png!thumbnail)
 
 - **筛选功能**
 
-实质：以GET传参的方式提交一个表单，通过参数重新获取对应的数据。 
+实质：以 GET 传参的方式提交一个表单，通过参数重新获取对应的数据。
 核心：两个变量 $where  $select
-（1）完善form表单相关属性，确保name属性和button按钮。
-（2）服务端调用数据库查询函数获取所有分类数据，遍历创建category下拉列表子菜单，并设置value值（参数值）为数据中的id
-（3）**筛选数据与获取全部数据发生冲突。**在服务端代码，如果有设置分类的参数，那么定义一个变量存放这个值，以便后续查询数据时作为条件，因为有一个所有分类，$where必须存在，但为了谨防后续查询语句中的where后为空，在判断筛选参数之前将$where先定义为一个恒等式
+（1）完善 form 表单相关属性，确保 name 属性和 button 按钮。
+（2）服务端调用数据库查询函数获取所有分类数据，遍历创建 category 下拉列表子菜单，并设置 value 值（参数值）为数据中的 id
+（3）**筛选数据与获取全部数据发生冲突。**在服务端代码，如果有设置分类的参数，那么定义一个变量存放这个值，以便后续查询数据时作为条件，因为有一个所有分类，$where必须存在，但为了谨防后续查询语句中的where后为空，在判断筛选参数之前将$where 先定义为一个恒等式
 
 > 注意点：
-> 1.php中的类似+=的运算符，字符串拼接可以 .=
-> 2.拼接要注意前后的空格隔开，很不容易发现的bug
-> 3.几乎所有数据库查询语句都要加入where语句和这个$where变量
+> 1.php 中的类似+=的运算符，字符串拼接可以 .= 2.拼接要注意前后的空格隔开，很不容易发现的 bug 3.几乎所有数据库查询语句都要加入 where 语句和这个\$where 变量
 
-（4）**筛选参数与分页参数发生冲突。**因此需要定义一个变量$select存放参数字符串，并拼接到分页参数后。同样由于逃不过all没有分类展示所有数据的情况，因此判断前定义空值并在判断条件中做拼接。
+（4）**筛选参数与分页参数发生冲突。**因此需要定义一个变量\$select 存放参数字符串，并拼接到分页参数后。同样由于逃不过 all 没有分类展示所有数据的情况，因此判断前定义空值并在判断条件中做拼接。
 
-> 注意要拼接的地方不能漏，尤其是HTML中循环向url中传参的时候最关键
+> 注意要拼接的地方不能漏，尤其是 HTML 中循环向 url 中传参的时候最关键
 > 操，要加到每一个分页参数的屁股后面！！！
 
-（5）筛选后，下拉菜单的选项要持久在页面上（设置value的selected）
-（6）葫芦画瓢。将status的筛选以及value持久写出来
+（5）筛选后，下拉菜单的选项要持久在页面上（设置 value 的 selected）
+（6）葫芦画瓢。将 status 的筛选以及 value 持久写出来
 
-> 注意的是：这里的SQL字符串拼接与category不同，因为这里的参数值是字符串而不是数字，必须要有单引号包裹
+> 注意的是：这里的 SQL 字符串拼接与 category 不同，因为这里的参数值是字符串而不是数字，必须要有单引号包裹
 > $where .= " and posts.status = '{$para_status}'";
 
 ![图片](https://uploader.shimo.im/f/7rpx9rxrCDYlnS8G.png!thumbnail)
@@ -442,18 +431,18 @@ Demand:
 - **单个删除及批量删除功能**
 
 **单个删除：**同分类目录页中的单个删除功能。
-同样是新建一个php文件，将删除按钮的href指向这个文件，并在其url之后传入当前行的id。
-在php文件中接收这个id并通过SQL语句在数据库中将其永久删除。
+同样是新建一个 php 文件，将删除按钮的 href 指向这个文件，并在其 url 之后传入当前行的 id。
+在 php 文件中接收这个 id 并通过 SQL 语句在数据库中将其永久删除。
 
 > 需要注意：
-> 删除执行完毕后，要返回原来的页面，但是由于原来的页面可能通过筛选、分页等在url中传了参数，如何才能原封不动的拿到原来的url地址？
-> **利用HTTP请求头中的Referer字段。**
+> 删除执行完毕后，要返回原来的页面，但是由于原来的页面可能通过筛选、分页等在 url 中传了参数，如何才能原封不动的拿到原来的 url 地址？
+> **利用 HTTP 请求头中的 Referer 字段。**
 
 ![图片](https://uploader.shimo.im/f/vdihsHta75AIwS6O.png!thumbnail)
 
 **批量删除：同分类目录的批量删除功能。**
 
-***>>>所有文章页面完整代码  posts.php***
+**_>>>所有文章页面完整代码 posts.php_**
 
 ### 5.6. 写文章页功能
 
@@ -461,14 +450,14 @@ Demand:
 
 常用富文本编辑器轮子：
 
-- UEditor   [https://ueditor.baidu.com/website/index.html](https://ueditor.baidu.com/website/index.html)
-- Tiny  [https://www.tiny.cloud/](https://www.tiny.cloud/)
+- UEditor [https://ueditor.baidu.com/website/index.html](https://ueditor.baidu.com/website/index.html)
+- Tiny [https://www.tiny.cloud/](https://www.tiny.cloud/)
 - CKEditor [https://ckeditor.com/](https://ckeditor.com/)
 - wangEditor [http://www.wangeditor.com/](http://www.wangeditor.com/)
 
 怎么用？看官方文档就可以了。
-你也可以寻找MarkDown编辑器的轮子接入
-根据wangEditor的文档（使用手册），将编辑器接入到页面中去。
+你也可以寻找 MarkDown 编辑器的轮子接入
+根据 wangEditor 的文档（使用手册），将编辑器接入到页面中去。
 ![图片](https://uploader.shimo.im/f/bDtUhGlbEro3uoIM.png!thumbnail)
 
 - **原有数据呈现**
@@ -478,12 +467,12 @@ Demand:
 
 - **提交文章数据**
 
-1. 完善和检查form表单。确保所有表单元素的name，有文件域要设置form-data。
+1. 完善和检查 form 表单。确保所有表单元素的 name，有文件域要设置 form-data。
 2. 提交表单三件套：校验表单 + 持久化（文件路径和数据库） + 响应
 
 - **原有文章编辑**
 
-搞了半天卡着了，好好理理get 与post 请求的顺序流程吧。
+搞了半天卡着了，好好理理 get 与 post 请求的顺序流程吧。
 
 ### 5.7. 评论页功能（Ajax 异步）
 
@@ -491,8 +480,8 @@ Demand:
 
 流程：
 
-1. 普通方式通过url打开评论页，返回所有静态页面元素，其中包含一个空表单
-2. Ajax请求服务端，从服务端查询数据库并获取表单数据
+1. 普通方式通过 url 打开评论页，返回所有静态页面元素，其中包含一个空表单
+2. Ajax 请求服务端，从服务端查询数据库并获取表单数据
 3. 与模板引擎配合将有格式的数据呈现在原来的空表单中
 
 ![图片](https://uploader.shimo.im/f/9mCrD2dAWXArEyRC.png!thumbnail)
@@ -500,24 +489,24 @@ Demand:
 
 > 模板引擎不会用？ 查文档 or 找博客
 
-4. 服务端分页获取数据，手动url传参获取指定页的数据
-5. 界面设置页码条功能，使其可以对url传参             整了我一整天
+4. 服务端分页获取数据，手动 url 传参获取指定页的数据
+5. 界面设置页码条功能，使其可以对 url 传参 整了我一整天
 
 ![图片](https://uploader.shimo.im/f/0mvxWGycAcosmwDf.png!thumbnail)
-***>>> get-comment.php***
+**_>>> get-comment.php_**
 ![图片](https://uploader.shimo.im/f/1fkhFicEhsggtsma.png!thumbnail)
 
 > 数据呈现用到了 **模板引擎 **
-> 分页功能调用了** layui** 组件库配合ajax来实现 （重难点）学会用轮子
+> 分页功能调用了** layui** 组件库配合 ajax 来实现 （重难点）学会用轮子
 
-***用Ajax的方式  VS  服务端直输出方式***
+**_用 Ajax 的方式 VS 服务端直输出方式_**
 
 - **单条数据的删除功能**
 
-1. 为了后续批量删除，利用h5中的data-属性为行<tr>设置id，而不是设在<td>。
-2. Js中，为之前ajax**动态创建的**删除按钮绑定点击事件，点击则对服务端发起ajax请求，传递当前行的id，删除当前行
+1. 为了后续批量删除，利用 h5 中的 data-属性为行<tr>设置 id，而不是设在<td>。
+2. Js 中，为之前 ajax**动态创建的**删除按钮绑定点击事件，点击则对服务端发起 ajax 请求，传递当前行的 id，删除当前行
 
-> on的方法尤其适用于静态元素下动态添加的后代元素，利用了委托事件
+> on 的方法尤其适用于静态元素下动态添加的后代元素，利用了委托事件
 
 1. 服务端接收 id ， 在数据库中进行删除
 2. Debug：点击删除按钮执行删除数据，页面应该及时得到刷新，有分页的情况下应该使界面保持在原来页码界面。
@@ -528,7 +517,7 @@ Demand:
 
 ![图片](https://uploader.shimo.im/f/IJqGfpbHkHULZbNQ.gif)
 
-1. 自定义表单控件：见html+css部分笔记
+1. 自定义表单控件：见 html+css 部分笔记
 
 ```
 <label>
@@ -541,14 +530,14 @@ Demand:
 
 ![图片](https://uploader.shimo.im/f/DSw8TBLCdKM5qXgb.gif)
 
-1. **利用H5中的FormData，与ajax结合，异步上传二进制文件**
+1. **利用 H5 中的 FormData，与 ajax 结合，异步上传二进制文件**
 
 ![图片](https://uploader.shimo.im/f/X4P74zYOcK0z2Y1L.png!thumbnail)
 
-> 关于 FormData  [点击我](https://blog.csdn.net/wangmx1993328/article/details/79947525)
+> 关于 FormData [点击我](https://blog.csdn.net/wangmx1993328/article/details/79947525)
 >
-> 1. 客户端：创建FormData对象，传入文件及其文件参数，将FormData二进制文件通过Ajax传递到服务端
-> 2. 服务端：确认有文件上传后，将文件从临时目录转移到静态资源目录，并拿到路径将其返回给Ajax。
+> 1. 客户端：创建 FormData 对象，传入文件及其文件参数，将 FormData 二进制文件通过 Ajax 传递到服务端
+> 2. 服务端：确认有文件上传后，将文件从临时目录转移到静态资源目录，并拿到路径将其返回给 Ajax。
 
 ![图片](https://uploader.shimo.im/f/hGcVq64OCxkNHyTf.png!thumbnail)
 ![图片](https://uploader.shimo.im/f/EIEtIcjyklQ0ebYa.png!thumbnail)
@@ -558,69 +547,10 @@ Demand:
 - [x] 用户管理页功能
 - [x] 个人中心页修改个人信息
 - [ ] Bug：评论列表页，点击操作按钮执行操作后立即拿到页码并重新加载当前分页
-- [ ] 解决上一个bug才能做 删除、批准、拒绝 以及批量操作的功能
+- [ ] 解决上一个 bug 才能做 删除、批准、拒绝 以及批量操作的功能
 - [ ] 编辑文章功能，点击“编辑”按钮，跳转到“写文章页面”，同时有对应数据显示
 - [ ] 仪表盘后台首页，数据可视化
 - [ ] 导航菜单页所有功能
 - [ ] 图片轮播设置页所有功能
 - [ ] 网站设置页功能
 - [ ] 前台页面所有
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
